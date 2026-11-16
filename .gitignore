@@ -1,0 +1,53 @@
+
+# Data & models
+data/raw/*
+!data/raw/.gitkeep
+# ** + re-include dirs so nested .gitkeeps (e.g. analysis/nca/) are reachable
+data/analysis/**
+!data/analysis/**/
+!data/analysis/**/.gitkeep
+models/*
+!models/.gitkeep
+
+# Conda environment
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# R / renv
+.Rproj.user/
+.Rhistory
+.RData
+.Rapp.history
+Rplots.pdf
+# renv manages renv/library itself via renv/.gitignore; settings + lockfile are committed
+
+# Quarto
+# Unanchored so per-project .quarto/ dirs in subfolders are caught too
+.quarto/
+# Render output: the .qmd is the source of truth. An .html is unusable without
+# its sibling *_files/ dir anyway, so tracking one without the other is pointless.
+*_files/
+*.html
+
+# Secrets
+.env
+
+# Microsoft Office lock/owner files (created while a document is open)
+~$*
