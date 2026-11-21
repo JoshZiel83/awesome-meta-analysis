@@ -1,0 +1,98 @@
+---
+title: "What is Meta-Analysis and why do it?"
+author: "Joshua Ziel"
+date: "2026-11-20"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    code-tools: true
+    code-fold: true
+    theme: cosmo
+    fig-width: 8
+    fig-height: 5
+reference-location: document
+execute:
+  warning: false
+  message: false
+---
+
+```{r}
+renv::load()
+library(tidyverse)
+library(ggplot2)
+pubs_data <- read.csv('data/PubMed_Timeline_Results_by_Year.csv', skip = 1)
+```
+
+## Meta-analysis Overview
+
+**Short answer**: Formal meta-analysis provides statistical methodoology to pool data 
+from multiple individual experiments or trials to synthesize a combined estimate of a 
+population parameter. This turnes out to be quite useful in biomedicine, because if one 
+is working on an interesting question others probably are working on it too, and often 
+there are multiple studies looking at similar things in relatively similar ways.  
+
+Many have also done probably tried to a similar thing informally. For example, a common 
+practice for powering Phase II starts with looking at historical trials that are similar, 
+creating a spreadsheet of the effect size and variability and ballparking some consensus 
+estimate.  That means that the overarching concept is probably intuitive; the statistical 
+tools and the overarching process just provide substantially more rigor when understanidng 
+the accuracy and precision of that consensus estimate really matters.
+
+```{r}
+p_pubs <- pubs_data |>
+    filter(Year != 2027)|>
+    ggplot(aes(x = Year, y = Count))
+
+p_pubs + 
+    geom_col(fill = 'blue') +
+    labs(
+        title = "Systematic Literature Review and Meta-analysis Publications Indexed in Pubmed",
+        x = 'Year of Publication',
+        y = 'Number of Publications',
+        caption = "Based on data retrieved on November 21, 2026."
+    ) +
+    theme_minimal()
+```
+
+
+Below are some specific scenarios for which meta-analysis is often applied with varying
+methodologies.
+
+**Scenario 1**: Multiple studies measuring the same thing in similar ways
+
+When one runs an experiment or analyzes data from a clinical trial, individiual measurements 
+are combined to provide parameter estimates. Because the number of experimental subjects or 
+trial participants is small relative to the entire population, such estimates will have varying 
+degrees of precision. In this case, the parameter estimates represent a single 'sample' from a 
+hypothetical population of similar studies that measure similar things.  Each of such studies 
+might estimate the parameter differently due to random noise but one would probably expect the 
+results of those hypothetical similar studies to be roughly in the same ball park. If one 
+actually had data from that population of studies, one might and probably would want to combine 
+or pool the results in some way to better separate an estimate of the true parameter from within 
+and between study variability.
+
+**Scenario 2**: Multiple studies evaluating different things relative to the same thing
+
+
+
+
+### Mathematical & Statistical Underpinnings
+
+### Types of Meta-analysis
+
+## Meta-Analytical Workflow
+
+### Preparing for Metaanalysis
+
+### Fitting the Data
+
+### Intrpreting and Validating Results
+
+## Worthwhile Resources
+
+## Glossary
+
+## Footnotes

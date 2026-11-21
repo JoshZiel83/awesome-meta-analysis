@@ -4,3 +4,7 @@
   - Accessed Date: November 2026
   - Summary: Electronic version of a published manual that "serves as an accessible introduction into how meta-analyses can be conducted in R. Essential steps for meta-analysis are covered, including pooling of outcome measures, forest plots, heterogeneity diagnostics, subgroup analyses, meta-regression, methods to control for publication bias, risk of bias assessments and plotting tools. Advanced, but highly relevant topics such as network meta-analysis, multi-/three-level meta-analyses, Bayesian meta-analysis approaches, and SEM meta-analysis are also covered."
 
+2) [**A comprehensive guide to conduct a systematic review and meta-analysis in medical research**](./refs/Martinez%20EC_2025_Medicine.pdf)
+  - Author: Ernesto Martinez, Patricia Hasbun, Vanessa Vargas et al
+  - Date: February 2025
+  - Summary: Provides a solid overview of the conceptual and analytical processes of meta-analysis in the biomedical domain, starting with systematic review.  Includes discussion of methodology for systematic review, practical tools for study information management and information extraction, as well as analytical tools for the analysis itself.
